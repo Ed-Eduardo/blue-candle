@@ -43,8 +43,37 @@ echo "::endgroup::"
 
 echo "::group:: Install Packages"
 
-# Install packages using dnf5
-# Example: dnf5 install -y tmux
+# Installing packages with dnf5
+# Enabling Terra repo for mangowm and noctalia-shell
+dnf5 -y install --nogpgcheck \
+		 --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' \
+		 terra-release
+# Disable Terra repo persistance
+dnf5 -y config-manager setopt terra.enabled=0
+
+dnf5 -y install --enablerepo=terra \
+		 mangowm \
+		 noctalia-shell
+
+# Noctalia-shell deps
+dnf5 -y install \
+		 python \
+		 git \
+		 imagemagick \
+		 ddcutil \
+		 power-profiles-daemon \
+		 nmcli \
+		 upower \
+		 bluez \
+		 # Noctalia-shell optional deps (TODO look closely for necessary configuration)
+		 cliphist \
+		 wlsunset \
+		 xdg-desktop-portal \
+		 python3 \
+		 evolution-data-server \
+# Terra repo cleanup
+rm -f /etc/yum.repos.d/terra*.repo
+dnf5 -y clean all
 
 # Example using COPR with isolated pattern:
 # copr_install_isolated "ublue-os/staging" package-name
