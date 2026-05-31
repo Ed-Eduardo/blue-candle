@@ -84,7 +84,15 @@ echo "::group:: System Configuration"
 
 # Enable/disable systemd services
 systemctl enable podman.socket
+systemctl enable power-profiles-daemon
+systemctl enable bluetooth
+systemctl enable evolution-data-server
+systemctl enable NetworkManager
+
 # Example: systemctl mask unwanted-service
+
+echo "....configuring root user (root: password)...."
+echo "root:password" | chpasswd
 
 echo "::endgroup::"
 
