@@ -55,18 +55,10 @@ dnf5 -y install --enablerepo=terra \
 		 mangowm \
 		 noctalia-shell
 
-# Noctalia-shell deps
+# Noctalia-shell deps (wlsunset + below are optional dps)
 dnf5 -y install \
-		 python \
 		 git \
-		 imagemagick \
-		 ddcutil \
-		 power-profiles-daemon \
-		 nmcli \
-		 upower \
-		 bluez \
-		 # Noctalia-shell optional deps (TODO look closely for necessary configuration)
-		 cliphist \
+		 ImageMagick \
 		 wlsunset \
 		 xdg-desktop-portal \
 		 python3 \
@@ -86,7 +78,8 @@ echo "::group:: System Configuration"
 systemctl enable podman.socket
 systemctl enable power-profiles-daemon
 systemctl enable bluetooth
-systemctl enable evolution-data-server
+# TODO evolution-data-server user level services
+#systemctl enable evolution-data-server
 systemctl enable NetworkManager
 
 # Example: systemctl mask unwanted-service
