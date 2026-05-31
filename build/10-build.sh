@@ -44,6 +44,7 @@ echo "::endgroup::"
 echo "::group:: Install Packages"
 
 # Installing packages with dnf5
+dnf5 -y install ghostty
 # Enabling Terra repo for mangowm and noctalia-shell
 dnf5 -y install --nogpgcheck \
 		 --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' \
