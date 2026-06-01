@@ -106,6 +106,9 @@ touch /var/lib/systemd/linger/myuser
 
 echo "myuser:mypassword" | chpasswd
 
+# Custom configs
+cp -rf /ctx/custom/etc/*
+
 echo "::endgroup::"
 
 # Restore default glob behavior
