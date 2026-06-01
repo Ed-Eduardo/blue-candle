@@ -90,6 +90,21 @@ echo "root:password" | chpasswd
 
 echo "::endgroup::"
 
+echo "::group:: User Configuration"
+mkdir -p /usr/lib/sysusers.d
+cat > /usr/lib/sysusers.d/10-myuser.conf << 'EOF'
+u myuser 1000 "My User" /home/myuser /bin/bash
+EOF
+
+mkdir -p /usr/lib/tmpfiles.d
+cat > /usr/lib/tmpfiles.d/10-myuser.conf << 'EOF'
+d myuser 0700 myuser myuser -
+EOF
+
+echo "myuser:mypassword" | chpasswd
+
+echo "::endgroup::"
+
 # Restore default glob behavior
 shopt -u nullglob
 
