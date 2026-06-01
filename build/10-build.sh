@@ -52,11 +52,11 @@ dnf5 -y config-manager setopt terra.enabled=0
 
 dnf5 -y install --enablerepo=terra \
 		 mangowm \
-		 noctalia-shell
+		 noctalia-shell \
+		 ghostty
 
-# Noctalia-shell deps (wlsunset + below are optional deps) + ghostty
+# Noctalia-shell deps (wlsunset + below are optional deps)
 dnf5 -y install \
-		 ghostty \
 		 git \
 		 ImageMagick \
 		 wlsunset \
