@@ -101,6 +101,9 @@ cat > /usr/lib/tmpfiles.d/10-myuser.conf << 'EOF'
 d myuser 0700 myuser myuser -
 EOF
 
+mkdir -p /var/lib/systemd/linger
+touch /var/lib/systemd/linger/myuser
+
 echo "myuser:mypassword" | chpasswd
 
 echo "::endgroup::"
