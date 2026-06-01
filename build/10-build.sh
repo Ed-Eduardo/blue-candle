@@ -90,10 +90,11 @@ echo "root:password" | chpasswd
 echo "::endgroup::"
 
 echo "::group:: User Configuration"
-mkdir -p /usr/lib/sysusers.d
-cat > /usr/lib/sysusers.d/10-myuser.conf << 'EOF'
-u myuser 1000 "My User" /home/myuser /bin/bash
-EOF
+# mkdir -p /usr/lib/sysusers.d
+# cat > /usr/lib/sysusers.d/10-myuser.conf << 'EOF'
+# u myuser 1000 "My User" /home/myuser /bin/bash
+# EOF
+useradd -m -G wheel /bin/bash/ myuser
 
 mkdir -p /usr/lib/tmpfiles.d
 cat > /usr/lib/tmpfiles.d/10-myuser.conf << 'EOF'
@@ -106,7 +107,7 @@ touch /var/lib/systemd/linger/myuser
 echo "myuser:mypassword" | chpasswd
 
 # Custom configs
-cp -rf /ctx/custom/etc/*
+cp -rf /ctx/custom/etc/* /etc
 
 echo "::endgroup::"
 
