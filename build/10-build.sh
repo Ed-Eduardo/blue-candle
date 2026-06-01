@@ -98,7 +98,7 @@ useradd -m -G wheel /bin/bash/ myuser
 
 mkdir -p /usr/lib/tmpfiles.d
 cat > /usr/lib/tmpfiles.d/10-myuser.conf << 'EOF'
-d myuser 0700 myuser myuser -
+d /home/myuser 0700 myuser myuser -
 EOF
 
 mkdir -p /var/lib/systemd/linger
