@@ -43,7 +43,7 @@ echo "::endgroup::"
 
 echo "::group:: Install Packages"
 
-# Enabling Terra repo for mangowm and noctalia-shell
+# Enabling Terra repo for noctalia-shell
 dnf5 -y install --nogpgcheck \
 		 --repofrompath 'terra,https://repos.fyralabs.com/terra$releasever' \
 		 terra-release
@@ -51,18 +51,20 @@ dnf5 -y install --nogpgcheck \
 dnf5 -y config-manager setopt terra.enabled=0
 
 dnf5 -y install --enablerepo=terra \
-		 mangowm \
 		 noctalia-shell \
 		 ghostty
 
-# Noctalia-shell deps (wlsunset + below are optional deps)
+# Install niri and some if it's weak deps: fontawesome-6-brands-fonts fontawesome-6-free-fonts gnome-keyring xdg-desktop-portal-gnome
+# Install Noctalia's optional deps: git ImageMagick wlsunsset xdg-desktop-porta python3 evolution-data-server
 dnf5 -y install \
+		 niri \
 		 git \
 		 ImageMagick \
 		 wlsunset \
 		 xdg-desktop-portal \
 		 python3 \
 		 evolution-data-server \
+
 # Terra repo cleanup
 rm -f /etc/yum.repos.d/terra*.repo
 dnf5 -y clean all
