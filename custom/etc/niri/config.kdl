@@ -268,7 +268,7 @@ layout {
 // which may be more convenient to use.
 // See the binds section below for more spawn examples.
 
-// This line starts
+// This line starts Noctalia-shell
 spawn-at-startup "qs" "-c" "noctalia-shell"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
@@ -340,8 +340,6 @@ window-rule {
     // block-out-from "screencast"
 }
 
-
-// The four following configuration blocks were added per Noctalia docs recommendation
 // Example: enable rounded corners for all windows.
 // (This example rule is commented out with a "/-" in front.)
 window-rule {
@@ -420,12 +418,6 @@ binds {
     XF86AudioStop        allow-when-locked=true { spawn-sh "playerctl stop"; }
     XF86AudioPrev        allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "media" "previous"; }
     XF86AudioNext        allow-when-locked=true { spawn "qs" "-c" "noctalia-shell" "ipc" "call" "media" "next"; }
-
-    // Example brightness key mappings for brightnessctl.
-    // You can use regular spawn with multiple arguments too (to avoid going through "sh"),
-    // but you need to manually put each argument in separate "" quotes.
-    XF86MonBrightnessUp allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "+10%"; }
-    XF86MonBrightnessDown allow-when-locked=true { spawn "brightnessctl" "--class=backlight" "set" "10%-"; }
 
     // Open/close the Overview: a zoomed-out view of workspaces and windows.
     // You can also move the mouse into the top-left hot corner,
@@ -664,10 +656,7 @@ binds {
     // moving the mouse or pressing any other key.
     Mod+Shift+P { power-off-monitors; }
 
-		// Niri keybindings
-		binds {
-    // Core Noctalia binds
-    Mod+Space { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
-    Mod+S { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
-    Mod+Shift+Comma { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
+		Mod+Space { spawn-sh "qs -c noctalia-shell ipc call launcher toggle"; }
+		Mod+S { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
+		Mod+Shift+Comma { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
 }
