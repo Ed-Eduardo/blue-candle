@@ -660,3 +660,5 @@ binds {
 		Mod+S { spawn-sh "qs -c noctalia-shell ipc call controlCenter toggle"; }
 		Mod+Shift+Comma { spawn-sh "qs -c noctalia-shell ipc call settings toggle"; }
 }
+
+include "noctalia.kdl"
