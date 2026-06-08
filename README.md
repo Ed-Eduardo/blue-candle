@@ -33,10 +33,11 @@ Here's what I want to accomplish, in order of importance:
     - [ ] Firefox
 	- [ ] Ghostty
     - [ ] Other graphical programs if possible
+  - [ ] Make sure automatic updating is working for the image, flatpaks, firmware and devbox containers
   - [ ] Make sure user `systemd` daemons are working
   - [ ] Make sure Brew is working
   - [ ] Make sure distrobox is working, and has GUI package
-  - [ ] Fancy terminal tooling
+  - [ ] Fancy terminal tooling (make sure the script for installing extra development tools is working, ignoring VSCode)
 
 - [Building](project-readme.md)
   - [ ] Image Signing
@@ -59,6 +60,7 @@ Here's what I want to accomplish, in order of importance:
   - [ ] Ship Emacs, somehow (brew cask? Package layering?)
   - [ ] Noctalia Dark & Light theme backgrounds, through either plugin || upstream || fork
   - [ ] Noctalia per theme background couple, thorugh either plugin || upstream || fork
+  - [ ] Attempt to use the Noctalia menu to change other system settings
   - [ ] A propper original aesthetic, maybe requiring a move away from Noctalia
 
 Only when I finish this roadmap, I would consider the OS anywhere usable by other people
