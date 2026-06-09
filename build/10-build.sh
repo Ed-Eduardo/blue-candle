@@ -52,7 +52,8 @@ dnf5 -y config-manager setopt terra.enabled=0
 
 dnf5 -y install --enablerepo=terra \
 		 noctalia-shell \
-		 ghostty
+		 ghostty \
+		 nwg-look
 
 # Install niri and some if it's weak deps: fontawesome-6-brands-fonts fontawesome-6-free-fonts gnome-keyring xdg-desktop-portal-gnome
 # Install Noctalia's optional deps: git ImageMagick wlsunsset xdg-desktop-porta python3 evolution-data-server
