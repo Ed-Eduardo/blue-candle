@@ -16,24 +16,28 @@ Here's what I want to accomplish, in order of importance:
 - OS
   - [ ] Ship pre-configured Noctalia
   - [ ] Default programs
-    - [x] Browser: Firefox
+    - [ ] Browser: Firefox
+	  - [ ] Figure out from where the package came from. If it is a image default, leave it, if not, remove and add flatpak
 	- [x] Terminal: [Ghostty](https://ghostty.org/)
 	- [ ] File manager: ?
 	- [ ] Image viewer: ?
-	- [ ] Video player: ?
+	- [x] Video player: Clapper
 	- [ ] Music player: ?
     - [ ] Screenshot tool: [Gradia](https://gradia.alexandervanhee.be/) (Flatpak?)
+	  - [ ] Figure out how to make it work with Niri
 	- [ ] System monitor:
 	  - [ ] htop
 	    - [ ] Fix fuzzel entry to open with ghostty
 	  - [ ] [Resources](https://apps.gnome.org/app/net.nokyan.Resources/)
-	- [ ] Software store: [Bazaar](https://usebazaar.org/)
+	- [x] Software store: [Bazaar](https://usebazaar.org/)
+  - [ ] Modify enfironment variable if necessary
   - [ ] Ship Noctalia templates through `skel` directory
     - [ ] Niri
     - [ ] Firefox
 	- [ ] Ghostty
     - [ ] Other graphical programs if possible
   - [ ] Make sure automatic updating is working for the image, flatpaks, firmware and devbox containers
+  - [ ] Make sure Bazaar is working
   - [ ] Make sure user `systemd` daemons are working
   - [ ] Make sure Brew is working
   - [ ] Make sure distrobox is working, and has GUI package
