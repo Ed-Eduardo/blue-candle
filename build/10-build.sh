@@ -105,7 +105,7 @@ echo "::group:: User Configuration"
 # cat > /usr/lib/sysusers.d/10-myuser.conf << 'EOF'
 # u myuser 1000 "My User" /home/myuser /bin/bash
 # EOF
-useradd -m -G wheel -s /bin/bash/ myuser
+useradd -m -G wheel -s /usr/sbin/bash/ myuser
 
 mkdir -p /usr/lib/tmpfiles.d
 cat > /usr/lib/tmpfiles.d/10-myuser.conf << 'EOF'
