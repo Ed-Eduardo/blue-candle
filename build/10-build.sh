@@ -69,6 +69,7 @@ dnf5 -y install --setopt=install_weak_deps=False \
 		 xdg-desktop-portal \
 		 python3 \
 		 evolution-data-server \
+		 adw-gtk3-theme
 
 # Terra repo cleanup
 rm -f /etc/yum.repos.d/terra*.repo
