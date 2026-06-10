@@ -81,6 +81,7 @@ echo "::endgroup::"
 
 echo "::group:: System Configuration"
 
+
 # Enable/disable systemd services
 systemctl enable podman.socket
 systemctl enable power-profiles-daemon
@@ -88,6 +89,9 @@ systemctl enable bluetooth
 # TODO evolution-data-server user level services
 #systemctl enable evolution-data-server
 systemctl enable NetworkManager
+# Actually enable the flatpak-preinstall service, so it installs the flatpaks from the defaults.preinstall file on first boot, when it has access to the internet
+cp /ctx/oci/common/shared/usr/lib/systemd/system/flatpak-preinstall.service /usr/lib/systemd/system/
+systemctl enable flatpak-preinstall.service
 
 # Example: systemctl mask unwanted-service
 
