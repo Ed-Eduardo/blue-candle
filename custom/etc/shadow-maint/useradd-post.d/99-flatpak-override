@@ -1,1 +1,2 @@
+#!/bin/bash
 flatpak override --filesystem=xdg-config/gtk-4.0:ro
