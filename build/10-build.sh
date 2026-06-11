@@ -99,25 +99,6 @@ systemctl enable flatpak-preinstall.service
 echo "....configuring root user (root: password)...."
 echo "root:password" | chpasswd
 
-echo "::endgroup::"
-
-echo "::group:: User Configuration"
-# mkdir -p /usr/lib/sysusers.d
-# cat > /usr/lib/sysusers.d/10-myuser.conf << 'EOF'
-# u myuser 1000 "My User" /home/myuser /bin/bash
-# EOF
-useradd -m -G wheel -s /usr/sbin/bash/ myuser
-
-mkdir -p /usr/lib/tmpfiles.d
-cat > /usr/lib/tmpfiles.d/10-myuser.conf << 'EOF'
-d /home/myuser 0700 myuser myuser -
-EOF
-
-mkdir -p /var/lib/systemd/linger
-touch /var/lib/systemd/linger/myuser
-
-echo "myuser:mypassword" | chpasswd
-
 # Custom configs
 cp -rf /ctx/custom/etc/* /etc
 
