@@ -627,6 +627,10 @@
             {
                 "enabled": true,
                 "id": "gtk"
+            },
+            {
+                "enabled": true,
+                "id": "pywalfox"
             }
         ],
         "enableUserTheming": false
