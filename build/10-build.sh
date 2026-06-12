@@ -68,6 +68,7 @@ dnf5 -y install --setopt=install_weak_deps=False \
 		 wlsunset \
 		 xdg-desktop-portal \
 		 python3 \
+		 python3-pip \
 		 evolution-data-server \
 		 adw-gtk3-theme
 
@@ -78,10 +79,34 @@ dnf5 -y clean all
 # Example using COPR with isolated pattern:
 # copr_install_isolated "ublue-os/staging" package-name
 
+# Installing pywalfox, for firefox theming
+pip install pywalfox --prefix /usr
+mkdir -p /usr/lib/mozilla/native-messaging-hosts/
+mkdir -p /usr/lib64/mozilla/native-messaging-hosts/
+cat > /usr/lib/mozilla/native-messaging-hosts/pywalfox.json << 'EOF'
+{
+  "name": "pywalfox",
+  "description": "Pywalfox native messaging host",
+  "path": "/usr/bin/pywalfox",
+  "type": "stdio",
+  "allowed_extensions": ["pywalfox@frewacom.org"]
+}
+EOF
+
+cp /usr/lib/mozilla/native-messaging-hosts/pywalfox.json /usr/lib64/mozilla/native-messaging-hosts/
+
+# pre anble adw-gtk3 as the default theme
+cat > /etc/dconf/db/local.d/00-bluemango << EOF
+[org/gnome/desktop/interface]
+gtk-theme='adw-gtk3'
+color-scheme='prefer-dark'
+EOF
+dconf update
+
+
 echo "::endgroup::"
 
 echo "::group:: System Configuration"
-
 
 # Enable/disable systemd services
 systemctl enable podman.socket
@@ -95,6 +120,7 @@ cp /ctx/oci/common/shared/usr/lib/systemd/system/flatpak-preinstall.service /usr
 systemctl enable flatpak-preinstall.service
 
 # Example: systemctl mask unwanted-service
+ln -s /dev/null /etc/systemd/user/xdg-desktop-portal-gtk.service
 
 echo "....configuring root user (root: password)...."
 echo "root:password" | chpasswd
