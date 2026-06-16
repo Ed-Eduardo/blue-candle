@@ -1,4 +1,4 @@
-# bluecandle
+# blue-candle
 
 Hands off immutable OS based on [Bluefin OS](https://projectbluefin.io/) for [niri](https://github.com/niri-wm/niri) users, or people that are curious about tiling/scrolling window managers.
 
