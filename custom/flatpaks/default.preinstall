@@ -47,8 +47,8 @@ Branch=stable
 [Flatpak Preinstall io.github.flattool.Ignition]
 Branch=stable
 
-[Flatpak Preinstall be.alexandervanhee.gradia]
-Branch=stable
+# [Flatpak Preinstall be.alexandervanhee.gradia]
+# Branch=stable
 
 [Flatpak Preinstall io.gitlab.adhami3310.Impression]
 Branch=stable
