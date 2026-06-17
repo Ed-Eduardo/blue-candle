@@ -24,6 +24,9 @@ Branch=stable
 [Flatpak Preinstall org.gnome.Papers]
 Branch=stable
 
+[Flatpak Preinstall org.gnome.Loupe]
+Branch=stable
+
 [Flatpak Preinstall org.gnome.SimpleScan]
 Branch=stable
 
@@ -62,6 +65,13 @@ Branch=stable
 Branch=3.22
 IsRuntime=true
 
-#[Flatpak Preinstall org.gtk.Gtk3theme.adw-gtk3-dark]
-#Branch=3.22
-#IsRuntime=true
+[Flatpak Preinstall org.gtk.Gtk3theme.adw-gtk3-dark]
+Branch=3.22
+IsRuntime=true
+
+# Some extra stuff
+[Flatpak Preinstall net.nokyan.Resources]
+Branch=stable
+
+[Flatpak Preinstall org.gnome.Music]
+Branch=stable

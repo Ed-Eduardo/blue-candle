@@ -70,6 +70,7 @@ dnf5 -y install --setopt=install_weak_deps=False \
 		 python3 \
 		 python3-pip \
 		 evolution-data-server \
+		 nautilus \
 		 adw-gtk3-theme
 
 # Terra repo cleanup
